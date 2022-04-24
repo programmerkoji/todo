@@ -1,11 +1,10 @@
 <?php
 
-require_once(__DIR__ . '/../app/dbconnect.php');
 require_once(__DIR__ . '/../app/functions.php');
 
 Token::create();
 
-$pdo = getPdoInstance();
+$pdo = Database::getInstance();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   Token::validate(); //送られてきたtokenのチェック
