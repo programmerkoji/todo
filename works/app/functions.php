@@ -1,22 +1,6 @@
 <?php
 require_once(__DIR__ . '/Utils.php');
-
-function createToken()
-{
-  if (!isset($_SESSION['token'])) {
-    $_SESSION['token'] = bin2hex(random_bytes(32));
-  }
-}
-
-function validateToken()
-{
-  if (
-    empty($_SESSION['token']) ||
-    $_SESSION['token'] !== filter_input(INPUT_POST, 'token')
-  ) {
-    exit('不正なアクセスです。');
-  }
-}
+require_once(__DIR__ . '/Token.php');
 
 function addTodo($pdo)
 {

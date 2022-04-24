@@ -3,12 +3,12 @@
 require_once(__DIR__ . '/../app/dbconnect.php');
 require_once(__DIR__ . '/../app/functions.php');
 
-createToken();
+Token::create();
 
 $pdo = getPdoInstance();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  validateToken(); //送られてきたtokenのチェック
+  Token::validate(); //送られてきたtokenのチェック
   $action = filter_input(INPUT_GET, 'action'); 
 
   switch ($action) {
