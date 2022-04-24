@@ -1,35 +1,12 @@
 <?php
 
-require_once(__DIR__ . '/../app/dbconnect.php');
-require_once(__DIR__ . '/../app/functions.php');
+require_once(__DIR__ . '/../app/config.php');
 
-Token::create();
+$pdo = Database::getInstance();
 
-$pdo = getPdoInstance();
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  Token::validate(); //送られてきたtokenのチェック
-  $action = filter_input(INPUT_GET, 'action'); 
-
-  switch ($action) {
-    case 'add':
-      addTodo($pdo);
-      break;
-    case 'toggle':
-      toggleTodo($pdo);
-      break;
-    case 'delete':
-      deleteTodo($pdo);
-      break;
-    default:
-      exit;
-  }
-
-  header('Location: ' . SITE_URL); //重複登録を避ける
-  exit;
-}
-
-$todos = getTodos($pdo);
+$todo = new Todo($pdo);
+$todo->processPost(); //postで送信されたデータを処理するメソッド
+$todos = $todo->getAll();  //todoを表示するために配列を取得するメソッド
 
 ?>
 
