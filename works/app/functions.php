@@ -1,9 +1,5 @@
 <?php
-
-function h($str)
-{
-  return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
-}
+require_once(__DIR__ . '/Utils.php');
 
 function createToken()
 {

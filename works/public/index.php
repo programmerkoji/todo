@@ -50,26 +50,26 @@ $todos = getTodos($pdo);
     <div class="inner">
       <form action="?action=add" method="post" class="todo_input">
         <input type="text" name="title" placeholder="Todoを入力しよう！">
-        <input type="hidden" name="token" value="<?= h($_SESSION['token']) ?>">
+        <input type="hidden" name="token" value="<?= Utils::h($_SESSION['token']) ?>">
       </form>
     
       <ul class="todo_list">
         <?php foreach($todos as $todo): ?>
           <li class="todo_item">
             <form action="?action=toggle" method="post" class="toggle_form">
-              <input type="hidden" name="id" value="<?= h($todo->id); ?>">
-              <input type="hidden" name="token" value="<?= h($_SESSION['token']) ?>">
+              <input type="hidden" name="id" value="<?= Utils::h($todo->id); ?>">
+              <input type="hidden" name="token" value="<?= Utils::h($_SESSION['token']) ?>">
               <label for="<?= $todo->id ?>">
                 <input type="checkbox" <?= $todo->is_done ? 'checked' : ''; ?> id="<?= $todo->id ?>">
                 <span <?= $todo->is_done ? 'class="done"' : ''; ?>>
-                  <?= h($todo->title); ?>
+                  <?= Utils::h($todo->title); ?>
                 </span>
               </label>
             </form>
             
             <form action="?action=delete" method="post">
-              <input type="hidden" name="id" value="<?= h($todo->id); ?>">
-              <input type="hidden" name="token" value="<?= h($_SESSION['token']) ?>">
+              <input type="hidden" name="id" value="<?= Utils::h($todo->id); ?>">
+              <input type="hidden" name="token" value="<?= Utils::h($_SESSION['token']) ?>">
               <span class="delete"><i class="fa-solid fa-delete-left"></i></span>
             </form>
 
