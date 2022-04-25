@@ -39,6 +39,7 @@ textarea {
 	cursor: pointer;
 	font-size: inherit;
 	outline: none;
+  padding: 0;
 }
 
 /* header */
@@ -151,4 +152,43 @@ input[type="checkbox"]:checked + span::after {
   font-size: 14px;
   color: #f46464;
   cursor: pointer;
+}
+
+/* signup */
+.signup_ttl {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.signup_form input {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  height: 32px;
+}
+.signup_form label {
+  cursor: pointer;
+}
+.signup_form > p:not(:first-of-type) {
+  margin-top: 1.5em;
+}
+.signup_btnWrapper {
+  text-align: center;
+}
+.signup_btn {
+  background: #FF9900;
+  color: #fcfcfc;
+  padding: 8px 24px;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+}
+.link_login {
+  margin-top: 1.5em;
+  text-align: right;
+  font-size: 14px;
+}
+.link_login > a {
+  font-weight: bold;
+  text-decoration: underline;
 }
