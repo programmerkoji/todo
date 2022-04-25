@@ -16,4 +16,12 @@
       span.parentNode.submit();
     });
   });
+
+  const purge = document.querySelector('.purge_txt')
+  purge.addEventListener('click', () => {
+    if (!confirm('本当に削除しますか？')) {
+      return;
+    }
+    purge.parentNode.submit();
+  });
 }

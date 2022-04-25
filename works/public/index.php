@@ -29,6 +29,12 @@ $todos = $todo->getAll();  //todoを表示するために配列を取得する�
   
   <div class="wrapper">
     <div class="inner">
+
+      <form action="?action=purge" method="post" class="purge">
+        <input type="hidden" name="token" value="<?= Utils::h($_SESSION['token']) ?>">
+        <span class="purge_txt"><i class="fa-solid fa-trash"></i> Delete All</span>
+      </form>
+
       <form action="?action=add" method="post" class="todo_input">
         <input type="text" name="title" placeholder="Todoを入力しよう！">
         <input type="hidden" name="token" value="<?= Utils::h($_SESSION['token']) ?>">

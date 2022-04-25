@@ -140,5 +140,15 @@ input[type="checkbox"]:checked + span::after {
   cursor: pointer;
 }
 .fa-delete-left {
-  color: #999;
+  color: #f46464;
+}
+
+.purge {
+  text-align: right;
+  margin-bottom: 4px;
+}
+.purge_txt {
+  font-size: 14px;
+  color: #f46464;
+  cursor: pointer;
 }
