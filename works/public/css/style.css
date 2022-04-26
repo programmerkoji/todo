@@ -155,6 +155,9 @@ input[type="checkbox"]:checked + span::after {
 }
 
 /* signup */
+.signup .inner {
+  padding: 40px 72px;
+}
 .signup_ttl {
   text-align: center;
   font-weight: bold;
@@ -178,7 +181,8 @@ input[type="checkbox"]:checked + span::after {
 .signup_btn {
   background: #FF9900;
   color: #fcfcfc;
-  padding: 8px 24px;
+  width: 100%;
+  padding: 8px;
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 0.06em;

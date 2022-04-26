@@ -22,10 +22,10 @@ $pdo = Database::getInstance();
 <body>
   <header><h1>Todoアプリ</h1></header>
   
-  <div class="wrapper">
+  <div class="wrapper signup">
     <div class="inner">
       <h2 class="signup_ttl">新規会員登録</h2>
-      <form action="register.php" method="POST" class="signup_form">
+      <form action="" method="POST" class="signup_form">
         <input type="hidden" name="token" value="<?= Utils::h($_SESSION['token']) ?>">
         <p>
           <label for="username">ユーザー名</label>
@@ -55,6 +55,5 @@ $pdo = Database::getInstance();
   </div>
   <!-- /.wrapper -->
 
-  <script src="js/main.js"></script>
 </body>
 </html>
